@@ -35,7 +35,7 @@ const createManifest = async (version, build, file = null) => {
   data.build = build;
   data.versionMajor = version[0];
   data.versionNoDot = version.replace(/\./g, '');
-  // data.directory = (/\d(a|b|rc)\d*$/.test(data.version) === true) ? `NSIS%20${data.versionMajor}%20Pre-release` : `NSIS%20${data.versionMajor}`;
+  data.className = (file === null) ? `NsisbiAT${data.versionNoDot}` : 'Nsisbi';
 
   const codeUrl = `https://downloads.sourceforge.net/project/nsisbi/nsisbi${version}/nsis-code-${build}-NSIS-trunk.zip`;
   const binarUrl = `https://downloads.sourceforge.net/project/nsisbi/nsisbi${version}/nsis-binary-${build}.zip`;
