@@ -24,13 +24,17 @@ $ brew tap idleberg/nsisbi
 You can now install any version of `nsisbi` using the command `brew install nsisbi@<version>`
 
 ```sh
-$ brew install nsisbi@3.03.1
+# Install latest version
+$ brew install nsisbi
+
+# Install specific version
+$ brew install nsisbi@3.01.1
 ```
 
 To switch between versions (including standard NSIS), use the  command `brew link nsisbi@<version>`
 
 ```sh
-$ brew link nsisbi@3.03.1
+$ brew link nsisbi@3.01.1
 ```
 
 ### Options
