@@ -27,7 +27,7 @@ let template = (outFile, data) => {
   });
 };
 
-const createManifest = async (version, build) => {
+const createManifest = async (version, build, file = null) => {
   let data = {};
   let blob;
 
@@ -47,7 +47,9 @@ const createManifest = async (version, build) => {
     blob = await download(binarUrl);
     data.hashBinary = getHash(blob);
 
-    template(`Formula/nsisbi@${data.version}.rb`, data);
+    file = (file === null) ? `Formula/nsisbi@${data.version}.rb` : `Formula/${file}`;
+
+    template(file, data);
   } catch(error) {
     if (error.statusMessage) {
       if (error.statusMessage === 'Too Many Requests') {
@@ -62,7 +64,13 @@ const createManifest = async (version, build) => {
 };
 
 // All versions
-Object.keys(versions.stable).forEach( key => {
+const allVersions = Object.keys(versions.stable);
+
+allVersions.forEach( key => {
   let value = versions.stable[key];
   createManifest(key, value);
 });
+
+// Latest version
+const latestVersion = allVersions[allVersions.length -1];
+createManifest(latestVersion, versions.stable[latestVersion], 'nsisbi.rb');
