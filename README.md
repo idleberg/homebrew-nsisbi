@@ -39,15 +39,15 @@ $ brew link nsisbi@3.01.1
 
 ### Options
 
-#### `with-advanced-logging`
+#### `--with-advanced-logging`
 
 Enable [advanced logging](https://nsis.sourceforge.io/Special_Builds#Advanced_logging) of all installer actions
 
-#### `with-large-strings`
+#### `--with-large-strings`
 
 Build makensis so installers can handle [large strings](https://nsis.sourceforge.io/Special_Builds#Large_strings) (>1024 characters)
 
-#### `with-debug`
+#### `--with-debug`
 
 Build executables with debugging information.
 
