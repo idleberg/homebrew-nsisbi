@@ -7,6 +7,13 @@ const { join } = require('path');
 const versions = require('./data/versions.json');
 const { writeFile } = require('fs');
 
+// via https://codeburst.io/javascript-async-await-with-foreach-b6ba62bbf404
+async function asyncForEach(array, callback) {
+  for (let index = 0; index < array.length; index++) {
+    await callback(array[index], index, array);
+  }
+}
+
 let getHash = (blob) => {
   const hash = hasha(blob, {algorithm: 'sha256'});
 
@@ -38,13 +45,13 @@ const createManifest = async (version, build, file = null) => {
   data.className = (file === null) ? `NsisbiAT${data.versionNoDot}` : 'Nsisbi';
 
   const codeUrl = `https://downloads.sourceforge.net/project/nsisbi/nsisbi${version}/nsis-code-${build}-NSIS-trunk.zip`;
-  const binarUrl = `https://downloads.sourceforge.net/project/nsisbi/nsisbi${version}/nsis-binary-${build}.zip`;
+  const binaryUrl = `https://downloads.sourceforge.net/project/nsisbi/nsisbi${version}/nsis-binary-${build}.zip`;
 
   try {
     blob = await download(codeUrl);
     data.hashCode = getHash(blob);
 
-    blob = await download(binarUrl);
+    blob = await download(binaryUrl);
     data.hashBinary = getHash(blob);
 
     file = (file === null) ? `Formula/nsisbi@${data.version}.rb` : `Formula/${file}`;
@@ -66,9 +73,9 @@ const createManifest = async (version, build, file = null) => {
 // All versions
 const allVersions = Object.keys(versions.stable);
 
-allVersions.forEach( key => {
-  let value = versions.stable[key];
-  createManifest(key, value);
+asyncForEach(allVersions, async key => {
+  const value = versions.stable[key];
+  await createManifest(key, value);
 });
 
 // Latest version
