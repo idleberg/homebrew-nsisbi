@@ -5,7 +5,7 @@
 [![Travis](https://flat.badgen.net/travis/idleberg/homebrew-nsisbi)](https://travis-ci.org/idleberg/homebrew-nsisbi)
 [![David](https://flat.badgen.net/david/dev/idleberg/homebrew-nsisbi)](https://david-dm.org/idleberg/homebrew-nsisbi?type=dev)
 
-Homebrew tap for NSISBI, a fork of Nullsoft Scriptable Install System with support for big installers
+Homebrew tap for [NSISBI](https://sourceforge.net/projects/nsisbi), a fork of Nullsoft Scriptable Install System with support for big installers
 
 ## Prerequisites
 
