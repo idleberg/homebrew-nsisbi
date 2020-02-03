@@ -1,4 +1,4 @@
-class Nsisbi < Formula
+class NsisbiAT3051 < Formula
   desc "System to create big Windows installers"
   homepage "https://sourceforge.net/projects/nsisbi/"
   url "https://downloads.sourceforge.net/project/nsisbi/nsisbi3.05.1/nsis-code-7140-1-NSIS-trunk.zip"
