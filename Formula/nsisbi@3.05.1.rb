@@ -56,24 +56,3 @@ class NsisbiAT3051 < Formula
     system "#{bin}/makensis", "#{share}/nsis/Examples/bigexample.nsi"
   end
 end
-
-__END__
-diff --git a/Source/util.h b/Source/util.h
-index 8eacc30..3ad0672 100755
---- a/Source/util.h
-+++ b/Source/util.h
-@@ -32,6 +32,14 @@
-
- #include <stdarg.h>
-
-+#ifndef fseeko64
-+#define fseeko64 fseeko
-+#endif
-+
-+#ifndef ftello64
-+#define ftello64 ftello
-+#endif
-+
- extern double my_wtof(const wchar_t *str);
- extern size_t my_strncpy(TCHAR*Dest, const TCHAR*Src, size_t cchMax);
- template<class T> bool strtrycpy(T*Dest, const T*Src, size_t cchCap) { size_t c = my_strncpy(Dest, Src, cchCap); return c < cchCap && !Src[c]; }
