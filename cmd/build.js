@@ -21,7 +21,9 @@ let getHash = (blob) => {
 };
 
 let template = (outFile, data) => {
-  ejs.renderFile(join(__dirname, '/data/nsisbi.ejs'), data, function(err, contents) {
+  const templateFile = parseInt(data.versionNoDot.slice(0, 3)) < 304 ? '/data/nsisbi-patch.ejs' : '/data/nsisbi.ejs';
+
+  ejs.renderFile(join(__dirname, templateFile), data, (err, contents) => {
     if (err) {
       console.error(symbol.error, err);
       return;
