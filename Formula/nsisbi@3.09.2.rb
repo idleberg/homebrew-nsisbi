@@ -1,4 +1,4 @@
-class Nsisbi < Formula
+class NsisbiAT3092 < Formula
   desc "System to create big Windows installers"
   homepage "https://sourceforge.net/projects/nsisbi/"
   url "https://downloads.sourceforge.net/project/nsisbi/nsisbi3.09.2/nsis-code-7405-2-NSIS-trunk.zip"

@@ -1,9 +1,9 @@
-class Nsisbi < Formula
+class NsisbiAT3081 < Formula
   desc "System to create big Windows installers"
   homepage "https://sourceforge.net/projects/nsisbi/"
-  url "https://downloads.sourceforge.net/project/nsisbi/nsisbi3.09.2/nsis-code-7405-2-NSIS-trunk.zip"
-  version "3.09.2"
-  sha256 "307cece5478ff73091b9e07da0f2ccf502a7d41255a3bced6eb8312663b07244"
+  url "https://downloads.sourceforge.net/project/nsisbi/nsisbi3.08.1/nsis-code-7336-1-NSIS-trunk.zip"
+  version "3.08.1"
+  sha256 "e8cbdf501998c340529462cb8e6bdfbb804d5cce67f59f8af5aa3c2816e1f69b"
 
   bottle do
     cellar :any_skip_relocation
@@ -20,8 +20,8 @@ class Nsisbi < Formula
   depends_on "scons" => :build
 
   resource "nsis" do
-    url "https://downloads.sourceforge.net/project/nsisbi/nsisbi3.09.2/nsis-binary-7405-2.zip"
-    sha256 "a8c4de90d0d4d41dd0547e621fe669953ea918aded5a3ef49e25d485f90bb6fb"
+    url "https://downloads.sourceforge.net/project/nsisbi/nsisbi3.08.1/nsis-binary-7336-1.zip"
+    sha256 "745be62d9ee79090f54197f212c3a48772989e7484e3ce5bf59a5fdd0c74fa4a"
   end
 
   # Patch util.h to define 64-bit aliases
