@@ -6,16 +6,16 @@ settings:
 
 devDependencies:
   concurrently:
-    specifier: ^5.1.0
+    specifier: ^5.3.0
     version: 5.3.0
   download:
     specifier: ^7.1.0
     version: 7.1.0
   ejs:
-    specifier: ^3.0.1
+    specifier: ^3.1.9
     version: 3.1.9
   ejs-lint:
-    specifier: ^1.0.1
+    specifier: ^1.2.2
     version: 1.2.2
   es6-promise:
     specifier: ^4.2.8
@@ -24,10 +24,10 @@ devDependencies:
     specifier: ^6.8.0
     version: 6.8.0
   hasha:
-    specifier: ^5.1.0
+    specifier: ^5.2.2
     version: 5.2.2
   husky:
-    specifier: ^4.2.1
+    specifier: ^4.3.8
     version: 4.3.8
   isomorphic-fetch:
     specifier: ^2.2.1
