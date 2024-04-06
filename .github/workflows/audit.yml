@@ -1,4 +1,4 @@
-name: audit+install
+name: Audit
 
 on:
   push:
@@ -30,7 +30,7 @@ jobs:
     - name: Tap Repository
       run: brew tap idleberg/nsisbi
 
-    - name: Audit Formulas
+    - name: Audit Formulae
       run: |
         for file in ./Formula/*.rb
         do
