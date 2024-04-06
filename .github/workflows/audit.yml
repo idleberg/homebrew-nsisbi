@@ -1,10 +1,9 @@
-name: audit
+name: audit+install
 
 on:
   push:
     branches:
       - main
-  workflow_dispatch:
 
 jobs:
   audit:
@@ -29,7 +28,12 @@ jobs:
         brew update --auto-update
 
     - name: Tap Repository
-      run: brew tap idleberg/dbxcli
+      run: brew tap idleberg/nsisbi
 
     - name: Audit Formulas
-      run: brew audit idleberg/dbxcli/dbxcli --online
+      run: |
+        for file in ./Formula/*.rb
+        do
+          echo "Auditing $file"
+          brew audit idleberg/nsisbi/$(basename ${file%.rb}) --online
+        done
