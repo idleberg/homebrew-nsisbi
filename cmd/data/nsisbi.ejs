@@ -5,6 +5,16 @@ class <%= className %> < Formula
   version "<%= version %>"
   sha256 "<%= hashCode %>"
 
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sonoma: "558728b5567bd1dc68e9612a51df346c56019de2f69df592150e77e46a979061"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "558728b5567bd1dc68e9612a51df346c56019de2f69df592150e77e46a979061"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "558728b5567bd1dc68e9612a51df346c56019de2f69df592150e77e46a979061"
+    sha256 cellar: :any_skip_relocation, sonoma: "d715b64a1f5d1122ec65d91285a05971027e1650826799f470b9c8896c56f1cb"
+    sha256 cellar: :any_skip_relocation, ventura: "d715b64a1f5d1122ec65d91285a05971027e1650826799f470b9c8896c56f1cb"
+    sha256 cellar: :any_skip_relocation, monterey: "d715b64a1f5d1122ec65d91285a05971027e1650826799f470b9c8896c56f1cb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "7f4f8b62a3bced7309be6d3d316c9b3594c16a27c71d8a4952ba7d0d4a7f5be9"
+  end
+
   option "with-advanced-logging", "Enable advanced logging of all installer actions"
   option "with-large-strings", "Enable strings up to 8192 characters instead of default 1024"
   option "with-debug", "Build executables with debugging information"
