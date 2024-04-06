@@ -1,9 +1,7 @@
 # homebrew-nsisbi
 
-[![BSD 2-Clause License](https://flat.badgen.net/badge/license/BSD%202-Clause/blue)](https://opensource.org/licenses/BSD-2-Clause)
-[![Latest Release](https://flat.badgen.net/github/release/idleberg/homebrew-nsisbi)](https://github.com/idleberg/homebrew-nsisbi/releases)
-[![Travis](https://flat.badgen.net/travis/idleberg/homebrew-nsisbi)](https://travis-ci.org/idleberg/homebrew-nsisbi)
-[![David](https://flat.badgen.net/david/dev/idleberg/homebrew-nsisbi)](https://david-dm.org/idleberg/homebrew-nsisbi?type=dev)
+[![BSD 2-Clause License](https://img.shields.io/github/license/idleberg/homebrew-nsisbi?style=for-the-badge)](https://opensource.org/licenses/BSD-2-Clause)
+[![Build](https://img.shields.io/github/actions/workflow/status/idleberg/homebrew-nsisbi/audit.yml?style=for-the-badge)](https://github.com/idleberg/homebrew-nsisbi/actions)
 
 Homebrew tap for [NSISBI](https://sourceforge.net/projects/nsisbi), a fork of Nullsoft Scriptable Install System with support for big installers
 
