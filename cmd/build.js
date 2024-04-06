@@ -73,13 +73,13 @@ const createManifest = async (version, build, file = null) => {
 };
 
 // All versions
-const allVersions = Object.keys(versions.stable);
+const stableVersions = Object.keys(versions.stable);
 
-asyncForEach(allVersions, async key => {
+asyncForEach(stableVersions, async key => {
   const value = versions.stable[key];
   await createManifest(key, value);
 });
 
 // Latest version
-const latestVersion = allVersions[allVersions.length -1];
+const latestVersion = stableVersions[stableVersions.length -1];
 createManifest(latestVersion, versions.stable[latestVersion], 'nsisbi.rb');
