@@ -1,12 +1,10 @@
 > [!CAUTION]
-> The versions included in this tap no longer build on Scons 4.2 (or higher). Likewise, newer versions of NSIBI no longer build on macOS at all.
+> The versions included in this tap no longer build on Scons 4.2 (or higher). Likewise, newer versions of NSIBI no longer build on macOS at all. The repository is now read-only and preserved for other developers to build upon.
 
 # homebrew-nsisbi
 
 [![BSD 2-Clause License](https://flat.badgen.net/badge/license/BSD%202-Clause/blue)](https://opensource.org/licenses/BSD-2-Clause)
 [![Latest Release](https://flat.badgen.net/github/release/idleberg/homebrew-nsisbi)](https://github.com/idleberg/homebrew-nsisbi/releases)
-[![Travis](https://flat.badgen.net/travis/idleberg/homebrew-nsisbi)](https://travis-ci.org/idleberg/homebrew-nsisbi)
-[![David](https://flat.badgen.net/david/dev/idleberg/homebrew-nsisbi)](https://david-dm.org/idleberg/homebrew-nsisbi?type=dev)
 
 Homebrew tap for [NSISBI](https://sourceforge.net/projects/nsisbi), a fork of Nullsoft Scriptable Install System with support for big installers
 
