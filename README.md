@@ -1,6 +1,3 @@
-> [!CAUTION]
-> The versions included in this tap no longer build on Scons 4.2 (or higher). Likewise, newer versions of NSIBI no longer build on macOS at all. The repository is now read-only and preserved for other developers to build upon.
-
 # homebrew-nsisbi
 
 [![BSD 2-Clause License](https://flat.badgen.net/badge/license/BSD%202-Clause/blue)](https://opensource.org/licenses/BSD-2-Clause)
