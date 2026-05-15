@@ -24,6 +24,7 @@ class Nsisbi < Formula
     args = [
       "CC=#{ENV.cc}",
       "CXX=#{ENV.cxx}",
+      "PREFIX=#{prefix}",
       "PREFIX_DOC=#{share}/nsis/Docs",
 
       # Don't strip, see https://github.com/Homebrew/homebrew/issues/28718
