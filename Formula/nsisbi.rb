@@ -1,9 +1,9 @@
 class Nsisbi < Formula
   desc "System to create big Windows installers"
   homepage "https://sourceforge.net/projects/nsisbi/"
-  url "https://downloads.sourceforge.net/project/nsisbi/nsisbi3.05.1/nsis-code-7140-1-NSIS-trunk.zip"
-  version "3.05.1"
-  sha256 "5c8c81a24eacc524526fd1c386334714f47c1dbb233f514aeda41f4c2d4d9cc9"
+  url "https://downloads.sourceforge.net/project/nsisbi/nsisbi3.10.3/nsis-code-7423-3-NSIS-trunk.zip"
+  version "3.10.3"
+  sha256 "28eecdd0b975631849705fb49cd1c811cdcdeed666feca52c3825542ea948633"
 
   option "with-advanced-logging", "Enable advanced logging of all installer actions"
   option "with-large-strings", "Enable strings up to 8192 characters instead of default 1024"
@@ -13,8 +13,8 @@ class Nsisbi < Formula
   depends_on "scons" => :build
 
   resource "nsis" do
-    url "https://downloads.sourceforge.net/project/nsisbi/nsisbi3.05.1/nsis-binary-7140-1.zip"
-    sha256 "70a0145256c4ee19808cb833a55595cca7ff486447c05a24ebdf3175aae6244c"
+    url "https://downloads.sourceforge.net/project/nsisbi/nsisbi3.10.3/nsis-binary-7423-3.zip"
+    sha256 "1602a567cb1346d446b570b149f33f3ed61d812fad33c778ca95a3203ee66184"
   end
 
   # Patch util.h to define 64-bit aliases
