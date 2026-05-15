@@ -5,13 +5,6 @@ class NsisbiAT3011 < Formula
   version "3.01.1"
   sha256 "3733e43ffd9ba07ee7757ca4b1ca30a4fc45cc33633d44eb46cef09c7bc4f4bd"
 
-  bottle do
-    cellar :any_skip_relocation
-    sha256 "e7cb0cf276e20c96b426188fa69b9a70aff58419747633682be8a957a4c6c166" => :mojave
-    sha256 "c4cd3ba5be94d0c9788997dd9d686b7868519ba2c631e215bdc1eac1ecf63ed0" => :high_sierra
-    sha256 "8f035781e4e926b8dcd367fbdc3a3a2bdd9b5fd96d268da62e9ac88ada495137" => :sierra
-  end
-
   option "with-advanced-logging", "Enable advanced logging of all installer actions"
   option "with-large-strings", "Enable strings up to 8192 characters instead of default 1024"
   option "with-debug", "Build executables with debugging information"
