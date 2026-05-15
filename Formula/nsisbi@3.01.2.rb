@@ -41,7 +41,8 @@ class NsisbiAT3012 < Formula
     args << "DEBUG=1" if build.with? "debug"
 
     system "scons", "makensis", *args
-    bin.install "build/urelease/makensis/makensis"
+    build_dir = build.with?("debug") ? "udebug" : "urelease"
+    bin.install "build/#{build_dir}/makensis/makensis"
     (share/"nsis").install resource("nsis")
   end
 
