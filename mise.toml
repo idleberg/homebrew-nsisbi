@@ -1,0 +1,40 @@
+[tools]
+ruby = "3.4"
+actionlint = "latest"
+hk = "1.56.1"
+pkl = "latest"
+
+[env]
+HK_MISE = 1
+
+[hooks]
+postinstall = "hk install --mise"
+
+[tasks.style]
+description = "Lint formulae (RuboCop via brew)"
+run = "brew style ./Formula"
+
+[tasks.audit]
+description = "Audit all formulae like CI does"
+run = """
+set -e
+brew tap idleberg/nsisbi
+for file in ./Formula/*.rb; do
+  name=$(basename "${file%.rb}")
+  echo "==> Auditing formula $name"
+  brew audit --formula --online --strict "idleberg/nsisbi/$name"
+done
+"""
+
+[tasks.test]
+description = "Install and test the latest formula (destructive: installs packages)"
+# ponytail: latest only; every nsisbi@ installs the same bin/makensis and old ones may not build
+run = """
+set -e
+brew install --formula --build-from-source idleberg/nsisbi/nsisbi
+brew test nsisbi
+"""
+
+[tasks.ci]
+description = "Everything CI runs, minus the installs"
+depends = ["style", "audit"]
