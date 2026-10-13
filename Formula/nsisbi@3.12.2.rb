@@ -1,9 +1,8 @@
-class NsisbiAT3103 < Formula
+class NsisbiAT3122 < Formula
   desc "System to create big Windows installers"
   homepage "https://sourceforge.net/projects/nsisbi/"
-  url "https://downloads.sourceforge.net/project/nsisbi/nsisbi3.12.2/nsisbi-3.12.2-amd64.zip"
-  version "3.12.2"
-  sha256 "0935e1fbf1283bc3e0bcbdaf798696afb4575ae1e6253d677069f9abc63045f1"
+  url "https://downloads.sourceforge.net/project/nsisbi/nsisbi3.12.2/nsisbi-3.12.2-src.tar.bz2"
+  sha256 "18832333c04faa67dacad0c48c2cd503dc4b7c1e0b782ad9ae9034fd78f31c51"
 
   option "with-advanced-logging", "Enable advanced logging of all installer actions"
   option "with-large-strings", "Enable strings up to 8192 characters instead of default 1024"
@@ -13,8 +12,8 @@ class NsisbiAT3103 < Formula
   depends_on "scons" => :build
 
   resource "nsis" do
-    url "https://downloads.sourceforge.net/project/nsisbi/nsisbi3.12.2/nsisbi-3.12.2-src.tar.bz2"
-    sha256 "18832333c04faa67dacad0c48c2cd503dc4b7c1e0b782ad9ae9034fd78f31c51"
+    url "https://downloads.sourceforge.net/project/nsisbi/nsisbi3.12.2/nsisbi-3.12.2-amd64.zip"
+    sha256 "0935e1fbf1283bc3e0bcbdaf798696afb4575ae1e6253d677069f9abc63045f1"
   end
 
   def install
@@ -45,6 +44,6 @@ class NsisbiAT3103 < Formula
 
   test do
     system "#{bin}/makensis", "-VERSION"
-    system "#{bin}/makensis", "#{share}/nsis/Examples/bigexample.nsi"
+    system "#{bin}/makensis", "#{share}/nsis/Examples/bigtest.nsi"
   end
 end
