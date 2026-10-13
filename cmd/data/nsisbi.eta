@@ -1,8 +1,10 @@
 class <%= className %> < Formula
   desc "System to create big Windows installers"
   homepage "https://sourceforge.net/projects/nsisbi/"
-  url "https://downloads.sourceforge.net/project/nsisbi/nsisbi<%= version %>/nsis-code-<%= build %>-NSIS-trunk.zip"
+  url "<%= sourceUrl %>"
+<% if (build) { %>
   version "<%= version %>"
+<% } %>
   sha256 "<%= hashCode %>"
 
   option "with-advanced-logging", "Enable advanced logging of all installer actions"
@@ -13,7 +15,7 @@ class <%= className %> < Formula
   depends_on "scons" => :build
 
   resource "nsis" do
-    url "https://downloads.sourceforge.net/project/nsisbi/nsisbi<%= version %>/nsis-binary-<%= build %>.zip"
+    url "<%= zipUrl %>"
     sha256 "<%= hashBinary %>"
   end
 
@@ -45,6 +47,6 @@ class <%= className %> < Formula
 
   test do
     system "#{bin}/makensis", "-VERSION"
-    system "#{bin}/makensis", "#{share}/nsis/Examples/bigexample.nsi"
+    system "#{bin}/makensis", "#{share}/nsis/Examples/<%= build ? "bigexample" : "bigtest" %>.nsi"
   end
 end

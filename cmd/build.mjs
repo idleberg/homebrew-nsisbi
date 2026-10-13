@@ -66,14 +66,23 @@ async function main() {
   for (const version of versions) {
     if (versionFilter.size > 0 && !versionFilter.has(version)) continue;
 
+    // legacy releases (< 3.12) are named by SVN build, newer ones by version
     const build = stable[version];
     const base = `https://downloads.sourceforge.net/project/nsisbi/nsisbi${version}`;
+    const sourceUrl = build
+      ? `${base}/nsis-code-${build}-NSIS-trunk.zip`
+      : `${base}/nsisbi-${version}-src.tar.bz2`;
+    const zipUrl = build
+      ? `${base}/nsis-binary-${build}.zip`
+      : `${base}/nsisbi-${version}-amd64.zip`;
     const data = {
       version,
       build,
       versionNoDot: version.replace(/\./g, ''),
-      hashCode: await sha256(`${base}/nsis-code-${build}-NSIS-trunk.zip`),
-      hashBinary: await sha256(`${base}/nsis-binary-${build}.zip`),
+      sourceUrl,
+      zipUrl,
+      hashCode: await sha256(sourceUrl),
+      hashBinary: await sha256(zipUrl),
     };
 
     await emit(`nsisbi@${version}.rb`, { ...data, className: `NsisbiAT${data.versionNoDot}` }, stats);

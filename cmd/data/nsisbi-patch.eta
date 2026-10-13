@@ -1,7 +1,7 @@
 class <%= className %> < Formula
   desc "System to create big Windows installers"
   homepage "https://sourceforge.net/projects/nsisbi/"
-  url "https://downloads.sourceforge.net/project/nsisbi/nsisbi<%= version %>/nsis-code-<%= build %>-NSIS-trunk.zip"
+  url "<%= sourceUrl %>"
   version "<%= version %>"
   sha256 "<%= hashCode %>"
 
@@ -13,7 +13,7 @@ class <%= className %> < Formula
   depends_on "scons" => :build
 
   resource "nsis" do
-    url "https://downloads.sourceforge.net/project/nsisbi/nsisbi<%= version %>/nsis-binary-<%= build %>.zip"
+    url "<%= zipUrl %>"
     sha256 "<%= hashBinary %>"
   end
 
