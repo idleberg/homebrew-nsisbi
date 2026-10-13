@@ -5,6 +5,8 @@ class NsisbiAT3053 < Formula
   version "3.05.3"
   sha256 "10e73ed1609b3ba1b2bdb2d5f474d613fba913bdfde2293b8a4d8028b6d77fb4"
 
+  keg_only :versioned_formula
+
   option "with-advanced-logging", "Enable advanced logging of all installer actions"
   option "with-large-strings", "Enable strings up to 8192 characters instead of default 1024"
   option "with-debug", "Build executables with debugging information"
@@ -45,6 +47,6 @@ class NsisbiAT3053 < Formula
 
   test do
     system "#{bin}/makensis", "-VERSION"
-    system "#{bin}/makensis", "#{share}/nsis/Examples/bigexample.nsi"
+    system "#{bin}/makensis", "#{share}/nsis/Examples/bigexample.nsi", "-XOutFile #{testpath}/test.exe"
   end
 end

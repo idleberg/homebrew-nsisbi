@@ -4,6 +4,8 @@ class NsisbiAT3123 < Formula
   url "https://downloads.sourceforge.net/project/nsisbi/nsisbi3.12.3/nsisbi-3.12.3-src.tar.bz2"
   sha256 "334bd4b98186436437f1adc7192ee57beb61ed30931355bc02fa7d458cfca03c"
 
+  keg_only :versioned_formula
+
   option "with-advanced-logging", "Enable advanced logging of all installer actions"
   option "with-large-strings", "Enable strings up to 8192 characters instead of default 1024"
   option "with-debug", "Build executables with debugging information"
@@ -44,6 +46,6 @@ class NsisbiAT3123 < Formula
 
   test do
     system "#{bin}/makensis", "-VERSION"
-    system "#{bin}/makensis", "#{share}/nsis/Examples/bigtest.nsi"
+    system "#{bin}/makensis", "#{share}/nsis/Examples/bigtest.nsi", "-XOutFile #{testpath}/test.exe"
   end
 end

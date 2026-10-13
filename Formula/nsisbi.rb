@@ -44,6 +44,6 @@ class Nsisbi < Formula
 
   test do
     system "#{bin}/makensis", "-VERSION"
-    system "#{bin}/makensis", "#{share}/nsis/Examples/bigtest.nsi"
+    system "#{bin}/makensis", "#{share}/nsis/Examples/bigtest.nsi", "-XOutFile #{testpath}/test.exe"
   end
 end
