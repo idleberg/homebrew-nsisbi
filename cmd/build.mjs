@@ -30,12 +30,6 @@ async function sha256(url) {
   return createHash('sha256').update(Buffer.from(await res.arrayBuffer())).digest('hex');
 }
 
-// 3.01–3.03 need util.h patched with 64-bit aliases
-function templateName(version) {
-  const [major, minor] = version.split('.').map(Number);
-  return major === 3 && minor < 4 ? 'nsisbi-patch' : 'nsisbi';
-}
-
 async function writeIfChanged(filePath, content) {
   let existing = null;
   try {
@@ -50,7 +44,7 @@ async function writeIfChanged(filePath, content) {
 
 async function emit(fileName, data, stats) {
   const filePath = path.join(FORMULA_DIR, fileName);
-  const result = await writeIfChanged(filePath, eta.render(templateName(data.version), data));
+  const result = await writeIfChanged(filePath, eta.render('nsisbi', data));
   stats[result] += 1;
   if (result !== 'unchanged') {
     console.log(logSymbols.success, `${result}: ${path.relative(ROOT, filePath)}`);

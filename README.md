@@ -26,13 +26,13 @@ You can now install any version of `nsisbi` using the command `brew install nsis
 $ brew install nsisbi
 
 # Install specific version
-$ brew install nsisbi@3.01.1
+$ brew install nsisbi@3.12.3
 ```
 
 To switch between versions (including standard NSIS), use the  command `brew link nsisbi@<version>`
 
 ```sh
-$ brew link nsisbi@3.01.1
+$ brew link nsisbi@3.12.3
 ```
 
 ### Options
