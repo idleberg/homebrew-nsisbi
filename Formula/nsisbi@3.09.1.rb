@@ -17,9 +17,6 @@ class NsisbiAT3091 < Formula
     sha256 "c79291579c1e7b04ebcf438a85594fac7cc6c7e205c6f6379f518e08a4f517f5"
   end
 
-  # Patch util.h to define 64-bit aliases
-  patch :DATA
-
   def install
     args = [
       "CC=#{ENV.cc}",
