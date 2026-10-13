@@ -17,9 +17,6 @@ class <%= className %> < Formula
     sha256 "<%= hashBinary %>"
   end
 
-  # Patch util.h to define 64-bit aliases
-  patch :DATA
-
   def install
     args = [
       "CC=#{ENV.cc}",
